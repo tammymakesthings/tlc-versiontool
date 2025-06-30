@@ -1,0 +1,14 @@
+# -*- Lisp; coding: utf-8; -*-
+# SPDX-Copyright-Text: 2025 Tammy Cravit <tammy@tammymakesthings.com>
+# SPDX-License-Identifier: MIT
+##############################################################################
+# Project    : tlc-versiontool
+# File Name  : qlfile
+# Description: qlot dependency list for the tlc-versiontool project
+##############################################################################
+ql cl-str
+ql iterate
+ql split-sequence
+ql clingon
+ql rove
+ql staple
