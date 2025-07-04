@@ -16,14 +16,19 @@ PROJECT_NAME := tlc-versiontool
 BUILD_DIR    := $(HOME)/common-lisp/$(PROJECT_NAME)
 
 BUILD_FILES   = $(BUILD_DIR)/qlfile
-ASD_FILES     = $(wildcard $(BUILD_DIR)/*.asd)
-SRC_FILES     = $(wildcard $(BUILD_DIR)/src/*.lisp) $(wildcard $(BUILD_DIR)/src/**/*.lisp)
-TEST_FILES    = $(wildcard $(BUILD_DIR)/tests/*.lisp) $(wildcard $(BUILD_DIR)/tests/**/*.lisp)
-ROS_FILES     = $(wildcard $(BUILD_DIR)/roswell/*.ros)
+ASD_FILES     = $(wildcard *.asd)
+SRC_FILES     = $(wildcard src/*.lisp) \
+				$(wildcard src/core/core/*.lisp) \
+				$(wildcard src/core/cli/*.lisp) \
+				tests/packages.lisp
+TEST_FILES    = $(wildcard tests/test-*.lisp) \
+				$(wildcard tests/core/test-*.lisp) \
+				$(wildcard tests/cli/test-*.lisp)
+ROS_FILES     = $(wildcard roswell/*.ros)
 
 default: test
 
-test: $(BUILD_FILES) $(ASD_FILES) $(SRC_FILES) $(TEST_FILES)
+test: 
 	@echo "===> Running unit tests for $(PROJECT_NAME)"
 	$(ROVE) $(ROVE_OPTS) $(TEST_FILES)
 
