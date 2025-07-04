@@ -8,3 +8,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (in-package tlc-versiontool/core)
+
+(defun parse-version-string (verstring)
+  (let ((version-list (uiop/version:parse-version verstring)))
+    (list
+     (or (nth 0 version-list) 0)
+     (or (nth 1 version-list) 0)
+     (or (nth 2 version-list) 0)
+     (or (nth 3 version-list) 0))))

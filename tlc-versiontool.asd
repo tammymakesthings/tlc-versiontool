@@ -8,7 +8,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 #+quicklisp
-(ql:quickload '("alexandria" "uiop" "split-sequence" "iterate" "str" "clingon"))
+(ql:quickload '("alexandria" "uiop" "split-sequence" 
+                "iterate" "str" "clingon"))
 
 (in-package :asdf-user)
 

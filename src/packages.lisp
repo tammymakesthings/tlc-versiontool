@@ -8,7 +8,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 #+quicklisp
-(ql:quickload '("uiop" "alexandria" "iterate" "str" "split-sequence" "clingon"))
+(ql:quickload '("uiop" "alexandria" "iterate" "str" "split-sequence"
+                "clingon"))
 
 (defpackage tlc-versiontool
   (:use #:cl)
@@ -18,6 +19,7 @@
   (:use #:cl)
   (:import-from #:split-sequence
                 #:split-sequence)
+  (:export #:parse-version-string)
   (:local-nicknames (:s :str)
                     (:it :iterate)
                     (:al :alexandria)))
